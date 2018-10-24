@@ -1,0 +1,49 @@
+---
+title: "Week 2 Assignment"
+author: "Praveen S"
+date: "6 March 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Intearctive Map
+
+This is an html page created using R Mark down and shows an interactive map built with leaflet
+
+```{r , echo=FALSE}
+
+library(leaflet)
+
+
+  df <- data.frame(lat=c(12.930087, 13.198635, 12.979462) 
+  
+  ,lng=c(77.614290, 77.706593 , 77.590909))
+
+bnglrIcon <- makeIcon(
+  iconUrl = "https://upload.wikimedia.org/wikipedia/commons/a/a8/India_flag_emblem.jpg",
+iconWidth=31*215/230, iconHeight = 31,
+iconAnchorX = 31*215/230/2, iconAnchorY = 16
+)
+  
+bnglrSites <- c(
+  "<a href='http://friaryparish.com/home.html' >St Antony's Friary Church Madiwala </a>",
+  "<a href='http://www.bengaluruairport.com/home.jspx?_afrLoop=23007535669302960&_afrWindowMode=0&_adf.ctrl-state=fjhlitedn_179/' >Bengaluru Internatioanl Airport </a>",
+  "<a href='http://www.bangaloreindia.org.uk/tourist-attractions/vidhan-soudha.html' >Vidhan Soudha </a>")
+
+df %>% leaflet() %>% addTiles() %>% addMarkers(icon=bnglrIcon, popup = bnglrSites) 
+
+```
+
+
+
+
+
+
+
+
+
+
+

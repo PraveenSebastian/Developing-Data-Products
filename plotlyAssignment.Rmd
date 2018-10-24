@@ -1,0 +1,47 @@
+---
+title: "Week 3 Assignment"
+author: "Praveen S"
+date: "24 March 2018"
+output:
+  slidy_presentation: default
+  ioslides_presentation: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+
+
+## Assignment Description
+
+This is a simple webpage showing a basic plotly example.
+
+The 'attitude' data set is considered for this plot.
+
+'Handling of Employee complaints'(numeric)is shown on X axis.
+
+The employee 'Overall rating' is shown on Y axis(numeric).
+
+Colour is applied based on 'Opportunity to learn'(numeric) parameter.
+
+
+## Slide with R Output
+
+```{r slide1, echo= TRUE, eval=FALSE}
+library(plotly)
+data(attitude)
+plot_ly(x=attitude$complaints, y = attitude$rating, color = attitude$learning, mode="markers")
+```
+
+
+## Slide with Plot
+
+```{r slide2, echo=FALSE, message=FALSE}
+library(plotly)
+data(attitude)
+plot_ly(x=attitude$complaints, y = attitude$rating, color = attitude$learning, mode="markers")
+```
+
+## End
+
